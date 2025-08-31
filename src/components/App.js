@@ -1,11 +1,24 @@
-import React, {Component, useState} from "react";
+import React from "react";
 import '../styles/App.css';
 
 const App = () => {
-  return (
-    <div id="main"></div>
-  )
-}
+  const projects = [
+    { name: "AI Chatbot", description: "A chatbot that can answer questions intelligently." },
+    { name: "E-commerce Platform", description: "An online platform to buy and sell products." },
+    { name: "Fitness Tracker", description: "An app to track workouts and health metrics." },
+    { name: "Portfolio Website", description: "A personal website to showcase my projects." }
+  ];
 
+  return (
+    <div className="ns-wrapper">
+      {projects.map((project, index) => (
+        <div key={index}>
+          <h1 data-ns-test={`project-name-${index}`}>{project.name}</h1>
+          <h6 data-ns-test={`project-description-${index}`}>{project.description}</h6>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default App;
